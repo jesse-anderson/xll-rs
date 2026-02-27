@@ -1,0 +1,33 @@
+# Rust
+/target/
+Cargo.lock
+# tests/
+# examples/
+# CHANGELOG.md
+
+
+# Windows build artifacts
+*.dll
+*.xll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.obj
+
+
+# Coverage
+lcov.info
+coverage*.json
+*.profraw
+*.profdata
+
+# Editors/OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Notes
+*todo*

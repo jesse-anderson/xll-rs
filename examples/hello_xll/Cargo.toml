@@ -1,0 +1,11 @@
+[package]
+name = "hello_xll"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+xll-rs = { path = "../.." }

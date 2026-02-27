@@ -1,0 +1,56 @@
+[package]
+name = "xll-rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Rust runtime for Excel XLL add-ins (XLOPER12, Excel12v trampoline, registration helpers)."
+repository = "https://github.com/jesse-anderson/linreg-core"
+readme = "README.md"
+keywords = ["excel", "xll", "ffi", "udf"]
+categories = ["api-bindings", "development-tools::ffi"]
+
+exclude = [
+    "/target",
+    "/**/target",
+    "/.github",
+    "/.cargo",
+    "/.gitignore",
+    "/.gitattributes",
+    "/.vscode",
+    "/.idea",
+    "/**/*.xll",
+    "/**/*.dll",
+    "/**/*.pdb",
+    "/**/*.lib",
+    "/**/*.exp",
+    "/**/*.ilk",
+    "/**/*.obj",
+    "/coverage*",
+    "/lcov.info",
+    "/**/*.profraw",
+    "/**/*.profdata",
+    "*todo*",
+    "/examples",
+    "/tests/",
+    ]
+include = [
+    "Cargo.toml",
+    "src/**",
+    "README.md",
+    "LICENSE-*",
+    "CHANGELOG.md",
+    "examples/**/Cargo.toml",
+    "examples/**/src/**",
+    "examples/**/README.md",
+    "examples/scientific_xll/SCI_Workflow_Example.xlsx",
+    ]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-pc-windows-msvc"]
+
+[lib]
+name = "xll_rs"
+path = "src/lib.rs"
+
+[dependencies]
+inventory = "0.3"
