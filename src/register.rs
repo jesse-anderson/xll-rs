@@ -2,7 +2,7 @@
 //!
 //! Wraps `xlfRegister` so each UDF can be registered with a single call.
 
-use super::entrypoint::{excel12, excel_free};
+use super::entrypoint::{excel12, excel_free, XLRET_SUCCESS};
 use super::types::*;
 
 /// Registrator — caches the DLL path and provides a simple `add()` method.
@@ -83,7 +83,7 @@ impl Reg {
         category: &str,
         description: &str,
         arg_help: &[&str],
-    ) -> i32 {
+    ) -> Result<(), i32> {
         let mut dll = self.dll_name_ptr();
         let mut fn_n = XLOPER12::from_str(fn_name);
         let mut types = XLOPER12::from_str(type_str);
@@ -134,7 +134,11 @@ impl Reg {
             free_xloper(h);
         }
 
-        ret
+        if ret == XLRET_SUCCESS {
+            Ok(())
+        } else {
+            Err(ret)
+        }
     }
 
     fn dll_name_ptr(&self) -> XLOPER12 {
@@ -183,7 +187,7 @@ fn free_xloper(oper: &mut XLOPER12) {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::entrypoint::{init_test_entrypoint, XLRET_SUCCESS};
+    use crate::entrypoint::init_test_entrypoint;
     use crate::types::*;
 
     #[test]
@@ -227,6 +231,6 @@ mod tests {
             "Test",
             &[],
         );
-        assert_eq!(ret, XLRET_SUCCESS);
+        assert!(ret.is_ok());
     }
 }

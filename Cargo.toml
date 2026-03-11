@@ -1,10 +1,10 @@
 [package]
 name = "xll-rs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Rust runtime for Excel XLL add-ins (XLOPER12, Excel12v trampoline, registration helpers)."
-repository = "https://github.com/jesse-anderson/linreg-core"
+repository = "https://github.com/jesse-anderson/xll-rs"
 readme = "README.md"
 keywords = ["excel", "xll", "ffi", "udf"]
 categories = ["api-bindings", "development-tools::ffi"]

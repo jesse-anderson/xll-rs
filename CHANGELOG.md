@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1] - 2026-03-11
+
+### Changed
+- `Reg::add()` now returns `Result<(), i32>` instead of raw `i32`, preventing
+  misinterpretation of the success return code
+
 ## [0.1.0] - 2026-02-26
 
 ### Added
