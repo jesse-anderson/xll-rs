@@ -309,6 +309,3 @@ If Excel is still loading the old version after this process, rename the file to
 the cache entirely (e.g. `scientific_xll_1.xll`, `scientific_xll_2.xll`). This forces
 Excel to treat it as a new add-in with no cached state. Remove the old entry afterward.
 
-## Status
-
-Work-in-progress extraction from linreg-core.
